@@ -18,13 +18,15 @@ end
 # Becomes This. Referencing the class gives helpers to us!
 # Also, splitting to test one aspect of the code is best practice
 RSpec.describe Card do
+  before do
+    @card = Card.new("Ace", "Spades")
+  end
+
   it "has a value" do
-    card = Card.new("Ace", "Spades")
-    expect(card.value).to eq("Ace")
+    expect(@card.value).to eq("Ace")
   end
 
   it "has a suit" do
-    card = Card.new("Ace", "Spades")
-    expect(card.suit).to eq("Spades")
+    expect(@card.suit).to eq("Spades")
   end
 end
