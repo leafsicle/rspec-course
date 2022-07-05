@@ -44,10 +44,11 @@ RSpec.describe Card do
   # end
   # this can be refactored to provided the same instance of the class
   # in place of createing a new instanced EACH time an example is run in a group
-  def card
-    Card.new("Ace", "Spades")
-  end
-
+  # def card
+  #   Card.new("Ace", "Spades")
+  # end
+  # Instead of the above, we use memoization to store the value in the symbol of :card
+  let(:card) { Card.new("Ace", "Spades") }
   it "has a value" do
     expect(card.value).to eq("Ace")
     card.value = "Queen"
