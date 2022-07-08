@@ -33,7 +33,7 @@ RSpec.describe "multi context hooks" do
     end
 
     context "in this condition" do
-      before(:example) do
+      before(:example) o
         puts "V"
       end
 
