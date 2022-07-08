@@ -33,13 +33,12 @@ RSpec.describe "multi context hooks" do
     end
 
     context "in this condition" do
-      before(:example) o
-        puts "V"
-      end
+      before(:example)
+      puts "V"
+    end
 
-      it "can add" do
-        expect(8 + 6).to eq(14)
-      end
+    it "can add" do
+      expect(8 + 6).to eq(14)
     end
   end
 end
