@@ -33,6 +33,7 @@ class Movie
       puts actor.act
       puts actor.fall_off_ladder
       puts actor.light_on_fire
+      puts actor.act
     end
   end
 end
@@ -45,10 +46,14 @@ RSpec.describe Movie do
   subject { described_class.new(stunter) }
   describe "#start_shooting method" do
     it "expects an actor to do 3 actions" do
-      expect(stunter).to receive(:ready?)
-      expect(stunter).to receive(:act)
-      expect(stunter).to receive(:fall_off_ladder)
-      expect(stunter).to receive(:light_on_fire)
+      # expect(stunter).to receive(:ready?)
+      # expect(stunter).to receive(:act)
+      # expect(stunter).to receive(:fall_off_ladder)
+      # expect(stunter).to receive(:light_on_fire)
+
+      # expect(stunter).to receive(:light_on_fire).once
+      expect(stunter).to receive(:light_on_fire).exactly(1).times
+      expect(stunter).to receive(:light_on_fire).at_most(1).times
       subject.start_shooting
     end
   end
