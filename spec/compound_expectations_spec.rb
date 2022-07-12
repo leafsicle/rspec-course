@@ -13,7 +13,7 @@ end
 end
 
 RSpec.describe [:coffee, :tea, :water] do
-  it "should allow for mult possibil" do
+  it "should allow for multiple possibilities" do
     
     expect(subject.sample).to eq(:coffee).or eq(:tea).or eq(:water)
   end
