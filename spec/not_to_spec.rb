@@ -5,6 +5,6 @@ RSpec.describe "not_to method" do
 
     expect(nil).not_to be_truthy
     expect(5).not_to respond_to(:flapjacks)
-    
+    expect{11/3}.not_to raise_error
   end
 end
